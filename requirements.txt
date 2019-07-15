@@ -1,1 +1,4 @@
-requests,big_letters,winsound,InstagramAPI
+requests
+big_letters
+winsound
+InstagramAPI
