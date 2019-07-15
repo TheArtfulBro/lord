@@ -1,7 +1,6 @@
 import requests,json,sys
 from os import system
 from big_letters import print_big as ban
-from winsound import Beep
 from time import sleep
 from InstagramAPI import InstagramAPI
 ######################################
@@ -60,6 +59,7 @@ def insta(email):
         w=' , insta'
 ######################################
 if 'win' in sys.platform:
+    from winsound import Beep
     clear='cls'
     green='color a'
     blue='color 1'
@@ -67,6 +67,8 @@ elif 'linux' in sys.platform:
     clear='clear'
     green='echo -e "\e[34m"'
     blue='echo -e "\e[36m"'
+    def Beep(a,b):
+        s=a+b
 else:
     clear=''
     green=''
