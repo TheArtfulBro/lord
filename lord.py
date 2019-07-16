@@ -155,6 +155,6 @@ try:
     f4.close()
 except:
     pass
-print('\n\n                       [+]finished[+]\n\n')
-print('\n\n             [+]The lists saved in the main folder[+]\n\n')
+print('\n\n                    [+]finished[+]\n\n')
+print('\n\n          [+]The lists saved in the main folder[+]\n\n')
 input()
