@@ -19,6 +19,8 @@ def yahoo(email):
 def gmail(email):
     url_ap =("http://apilayer.net/api/check?access_key="+key+"&email="+email+"&smtp=1&format=1")
     info = json.loads(requests.get(url_ap).text)
+    global c
+    c=c+1
     try:
         if info['smtp_check']==0:
             with open('gmail_live.txt','a')as f2:
@@ -29,12 +31,18 @@ def gmail(email):
             q='Live gmail'
             insta(z['email'])
     except KeyError :
-        print('\n\n[!]Error please contact with the author [mohamed hassan] to solve it \n\n')
-        
+        if c ==251:
+                key=input('\n\n[!]Error key you can check yahoo only if you press enter or\n[+]Enter the new key : \n\n')
+                if len(key)==32:
+                    c=0
+                if key=='':
+                    key=key1  
 
 def hotmail(email):
     url_ap =("http://apilayer.net/api/check?access_key="+key+"email="+email+"&smtp=1&format=1")
     info = json.loads(requests.get(url_ap).text)
+    global c
+    c=c+1
     try:
         if info['smtp_check']==0:
             with open('hotmail_live.txt','a')as f4:
@@ -45,8 +53,12 @@ def hotmail(email):
             q='Live hotmail'
             insta(z['email'])
     except KeyError :
-        print('\n\n[!]Error please contact with the author [mohamed hassan] to solve it \n\n')
-
+        if c ==251:
+                key=input('\n\n[!]Error key you can check yahoo only if you press enter or\n[+]Enter the new key : \n\n')
+                if len(key)==32:
+                    c=0
+                if key=='':
+                    key=key1
 def insta(email):
     api = InstagramAPI(z['email'], "sxzxcxzwe")
     api.login()
@@ -74,6 +86,7 @@ else:
     green=''
     blue=''
 ######################################
+c=0
 system(clear)
 system(green)
 print('''
@@ -100,6 +113,7 @@ ban('   lord')
 idt=input('[+]Enter your username : ')
 passw=input('[+]Enter your password : ')
 key=input('[+]Enter your key : ')
+key1=key
 url = ("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=" + (idt) + "&locale=en_US&password=" + (passw) + "&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
 data= requests.get(url)
 op = json.loads(data.text)
